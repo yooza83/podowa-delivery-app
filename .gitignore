@@ -6,3 +6,7 @@ backend/dist/
 *.local
 .DS_Store
 Thumbs.db
+
+# 실제 고객정보가 담긴 파일은 절대 커밋하지 않는다.
+# 테스트용 가짜 데이터는 sample-data/에, 실제(민감) 데이터는 이 폴더에만 둘 것.
+local-data/
