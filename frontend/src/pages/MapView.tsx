@@ -222,6 +222,12 @@ export default function MapView() {
               <strong>{activeOrder.name}</strong>
               <p>{activeOrder.address}</p>
               {activeOrder.phone && <p>연락처: {activeOrder.phone}</p>}
+              {activeOrder.productInfo && <p>품목: {activeOrder.productInfo}</p>}
+              {(activeOrder.amount || activeOrder.paymentStatus) && (
+                <p>
+                  {[activeOrder.amount, activeOrder.paymentStatus].filter(Boolean).join(" · ")}
+                </p>
+              )}
               {activeOrder.note && <p>요청사항: {activeOrder.note}</p>}
               <div className="assign-row">
                 <input

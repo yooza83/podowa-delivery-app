@@ -13,6 +13,13 @@ export interface DeliveryOrder {
   requestDate: string;
   note: string;
 
+  // 실제 농장 주문서(품목/금액/결제상태 등)를 그대로 다루기 위한 선택 필드.
+  // 없는 파일(샘플 등)에서는 전부 빈 문자열.
+  productInfo: string;
+  zone: string;
+  amount: string;
+  paymentStatus: string;
+
   lat?: number;
   lng?: number;
   geocodeStatus: GeocodeStatus;
@@ -25,12 +32,17 @@ export interface DeliveryOrder {
   assignee: string; // 배정된 담당자 이름 (미배정이면 "")
 }
 
+/** -1 = 이 필드는 사용 안 함(해당 컬럼 없음) */
 export interface ColumnMapping {
-  name: number; // -1 = 미지정
+  name: number;
   address: number;
   phone: number;
   requestDate: number;
   note: number;
+  productInfo: number;
+  zone: number;
+  amount: number;
+  paymentStatus: number;
 }
 
 export interface RouteStop {
@@ -39,6 +51,9 @@ export interface RouteStop {
   address: string;
   phone: string;
   note: string;
+  productInfo: string;
+  amount: string;
+  paymentStatus: string;
   lat: number;
   lng: number;
 }

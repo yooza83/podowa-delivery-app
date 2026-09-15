@@ -100,7 +100,18 @@ export default function RouteCompare() {
     () =>
       orders
         .filter((o) => o.assignee === assignee && o.geocodeStatus === "ok" && o.lat !== undefined && o.lng !== undefined)
-        .map((o) => ({ id: o.id, name: o.name, address: o.address, phone: o.phone, note: o.note, lat: o.lat!, lng: o.lng! })),
+        .map((o) => ({
+          id: o.id,
+          name: o.name,
+          address: o.address,
+          phone: o.phone,
+          note: o.note,
+          productInfo: o.productInfo,
+          amount: o.amount,
+          paymentStatus: o.paymentStatus,
+          lat: o.lat!,
+          lng: o.lng!,
+        })),
     [orders, assignee]
   );
 
@@ -171,6 +182,8 @@ export default function RouteCompare() {
     return [{ id: "route", path: chosen.path, color: chosenIdx !== null ? OPTION_COLORS[chosenIdx] : "#2563eb" }];
   }, [chosen, chosenIdx]);
 
+  const hasExtraInfo = orderedStops.some((s) => s.productInfo || s.amount || s.paymentStatus);
+
   const downloadExcel = () => {
     if (!chosen) return;
     const rows: ExportRow[] = orderedStops.map((s, i) => ({
@@ -178,6 +191,9 @@ export default function RouteCompare() {
       고객명: s.name,
       주소: s.address,
       연락처: s.phone,
+      품목: s.productInfo,
+      금액: s.amount,
+      결제상태: s.paymentStatus,
       요청사항: s.note,
       예상도착시간: etas[i] || "",
     }));
@@ -286,6 +302,8 @@ export default function RouteCompare() {
                   <th>고객명</th>
                   <th>주소</th>
                   <th>연락처</th>
+                  {hasExtraInfo && <th>품목</th>}
+                  {hasExtraInfo && <th>금액/결제</th>}
                   <th>요청사항</th>
                   <th>예상 도착</th>
                   <th>내비게이션</th>
@@ -298,6 +316,8 @@ export default function RouteCompare() {
                     <td>{s.name}</td>
                     <td>{s.address}</td>
                     <td>{s.phone}</td>
+                    {hasExtraInfo && <td>{s.productInfo}</td>}
+                    {hasExtraInfo && <td>{[s.amount, s.paymentStatus].filter(Boolean).join(" · ")}</td>}
                     <td>{s.note}</td>
                     <td>{etas[i]}</td>
                     <td>
