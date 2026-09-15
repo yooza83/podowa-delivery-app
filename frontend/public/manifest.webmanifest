@@ -2,6 +2,8 @@
   "name": "포도와농장 배송앱",
   "short_name": "포도와농장",
   "description": "포도와농장 배송 경로 최적화 앱",
+  "lang": "ko",
+  "dir": "ltr",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

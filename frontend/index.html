@@ -1,8 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko" translate="no">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <!-- 실제 내용은 한국어인데 lang="en"으로 잘못 표시돼 있으면 모바일 브라우저가
+         "번역이 필요한 페이지"로 오인해 자동번역을 걸어 어색한 문구로 덮어써버린다.
+         lang="ko" + notranslate로 이 문제를 막는다. -->
+    <meta name="google" content="notranslate" />
     <title>포도와농장 배송앱</title>
 
     <!-- 앱 아이콘 (브라우저 탭 + 홈 화면 추가용) -->
