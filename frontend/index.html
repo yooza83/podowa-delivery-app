@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>포도와농장 배송앱</title>
+    <!--
+      TMap JS SDK: 빌드 타임에 심어지는 '공개용' 지도 키(VITE_TMAP_JS_APP_KEY, frontend/.env).
+      일반 <script> 태그(async/defer 없음)로 HTML 파싱 중 바로 실행되게 해야 한다 —
+      이 SDK가 내부적으로 document.write()로 하위 리소스를 불러오는데, 나중에 JS로
+      동적 삽입하면 브라우저가 이를 막아버린다(async 스크립트의 document.write 제한).
+    -->
+    <script src="https://apis.openapi.sk.com/tmap/jsv2?version=1&appKey=%VITE_TMAP_JS_APP_KEY%"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

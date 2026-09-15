@@ -1,0 +1,279 @@
+.loading-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-size: 18px;
+  color: var(--text-muted);
+}
+
+/* ── 로그인 ───────────────────────────── */
+.login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+.login-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 32px 24px;
+  width: 100%;
+  max-width: 360px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: center;
+}
+.login-card input {
+  text-align: center;
+  font-size: 18px;
+}
+
+/* ── 앱 셸 ───────────────────────────── */
+.app-shell {
+  max-width: 1100px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.app-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+  background: var(--card-bg);
+}
+.app-header h1 {
+  font-size: 18px;
+  margin: 0;
+  white-space: nowrap;
+}
+.logout-btn {
+  margin-left: auto;
+  background: transparent;
+  color: var(--text-muted);
+  min-height: unset;
+  padding: 8px 12px;
+}
+.stepper {
+  display: flex;
+  gap: 8px;
+  flex: 1;
+  flex-wrap: wrap;
+}
+.stepper a {
+  text-decoration: none;
+  color: var(--text-muted);
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: #f3f4f6;
+  font-size: 14px;
+  font-weight: 600;
+}
+.stepper a.active {
+  background: var(--accent);
+  color: white;
+}
+
+main {
+  padding: 16px;
+  flex: 1;
+}
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ── 업로드 ───────────────────────────── */
+.file-drop {
+  display: block;
+  border: 2px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 32px 16px;
+  text-align: center;
+  cursor: pointer;
+  background: var(--card-bg);
+  font-weight: 600;
+  margin: 12px 0;
+}
+.file-drop input {
+  display: none;
+}
+.mapping-grid {
+  display: grid;
+  gap: 10px;
+  margin: 12px 0;
+}
+.mapping-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: var(--card-bg);
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+.mapping-row select {
+  flex: 1;
+  max-width: 60%;
+}
+.required {
+  color: var(--danger);
+  margin-left: 2px;
+}
+.table-wrap {
+  overflow-x: auto;
+  margin: 12px 0;
+  border-radius: 8px;
+}
+
+/* ── 지도 페이지 ───────────────────────────── */
+.map-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+@media (min-width: 900px) {
+  .map-layout {
+    grid-template-columns: 280px 1fr;
+  }
+}
+.map-sidebar {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 14px;
+  border: 1px solid var(--border);
+}
+.map-main {
+  position: relative;
+}
+.tmap-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eee;
+  border-radius: var(--radius);
+  color: var(--text-muted);
+  padding: 20px;
+  text-align: center;
+}
+.region-tree {
+  list-style: none;
+  margin: 0;
+  padding-left: 14px;
+}
+.region-tree.depth-0 {
+  padding-left: 0;
+}
+.region-tree label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 0;
+  font-size: 14px;
+  cursor: pointer;
+}
+.region-tree em {
+  color: var(--text-muted);
+  font-style: normal;
+  font-size: 12px;
+}
+.assign-row {
+  display: flex;
+  gap: 8px;
+  margin: 8px 0;
+}
+.assign-row input {
+  flex: 1;
+}
+.order-detail-card {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 16px;
+  width: min(280px, 80vw);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: transparent;
+  min-height: unset;
+  padding: 4px 8px;
+}
+.pin-hint {
+  background: #fffbeb;
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin-top: 8px;
+}
+.failed-panel {
+  margin-top: 20px;
+  background: var(--danger-bg);
+  border-radius: var(--radius);
+  padding: 14px;
+}
+.row-actions {
+  display: flex;
+  gap: 6px;
+}
+.row-actions button {
+  padding: 6px 10px;
+  min-height: unset;
+  font-size: 13px;
+}
+
+/* ── 경로 비교 ───────────────────────────── */
+.route-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  background: var(--card-bg);
+  padding: 14px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+.route-controls label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+.option-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin: 16px 0;
+}
+@media (min-width: 700px) {
+  .option-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.option-card {
+  background: var(--card-bg);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px;
+}
+.option-card.chosen {
+  border-color: var(--accent);
+}
+.stop-list {
+  max-height: 220px;
+  overflow-y: auto;
+  padding-left: 20px;
+  font-size: 14px;
+}

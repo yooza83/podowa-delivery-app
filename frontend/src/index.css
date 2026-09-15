@@ -1,0 +1,96 @@
+:root {
+  --text: #333;
+  --text-muted: #6b7280;
+  --bg: #f7f7f5;
+  --card-bg: #ffffff;
+  --border: #e2e2e2;
+  --accent: #7c3aed;
+  --accent-dark: #6d28d9;
+  --danger: #dc2626;
+  --danger-bg: #fef2f2;
+  --radius: 12px;
+
+  font: 16px/1.5 system-ui, "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+h1, h2, h3 {
+  margin: 0 0 8px;
+  font-weight: 700;
+}
+
+p {
+  margin: 4px 0;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 18px;
+  background: #e5e7eb;
+  color: var(--text);
+  min-height: 44px;
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+button.primary {
+  background: var(--accent);
+  color: white;
+  font-size: 17px;
+  font-weight: 700;
+  width: 100%;
+  margin-top: 16px;
+}
+button.primary:hover:not(:disabled) {
+  background: var(--accent-dark);
+}
+
+input, select {
+  font: inherit;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  min-height: 44px;
+  background: white;
+  color: var(--text);
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 14px;
+}
+th, td {
+  border: 1px solid var(--border);
+  padding: 8px 10px;
+  text-align: left;
+}
+th {
+  background: #f3f4f6;
+}
+
+.hint {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+.error-text {
+  color: var(--danger);
+  background: var(--danger-bg);
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+}
